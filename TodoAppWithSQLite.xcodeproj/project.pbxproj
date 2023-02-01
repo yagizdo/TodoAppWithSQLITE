@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		101C226F298AE26800EAB568 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C226E298AE26800EAB568 /* CategoryCollectionViewCell.swift */; };
+		101C2271298B056700EAB568 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C2270298B056700EAB568 /* TodoTableViewCell.swift */; };
 		108236DF298A8037008D0E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108236DE298A8037008D0E9D /* AppDelegate.swift */; };
 		108236E1298A8037008D0E9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108236E0298A8037008D0E9D /* SceneDelegate.swift */; };
 		108236E3298A8037008D0E9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108236E2298A8037008D0E9D /* HomeViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		101C226E298AE26800EAB568 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		101C2270298B056700EAB568 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		108236DB298A8037008D0E9D /* TodoAppWithSQLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAppWithSQLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		108236DE298A8037008D0E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		108236E0298A8037008D0E9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				101C226E298AE26800EAB568 /* CategoryCollectionViewCell.swift */,
+				101C2270298B056700EAB568 /* TodoTableViewCell.swift */,
 			);
 			path = collectionview;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				108236E3298A8037008D0E9D /* HomeViewController.swift in Sources */,
 				10823700298A8A13008D0E9D /* FMDatabaseQueue.m in Sources */,
 				108236DF298A8037008D0E9D /* AppDelegate.swift in Sources */,
+				101C2271298B056700EAB568 /* TodoTableViewCell.swift in Sources */,
 				108236E1298A8037008D0E9D /* SceneDelegate.swift in Sources */,
 				101C226F298AE26800EAB568 /* CategoryCollectionViewCell.swift in Sources */,
 				10823703298A8A13008D0E9D /* FMDatabasePool.m in Sources */,

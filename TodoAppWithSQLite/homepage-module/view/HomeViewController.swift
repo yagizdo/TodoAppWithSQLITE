@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
+    @IBOutlet weak var todosTableView: UITableView!
+    
     // Database object
     var db:FMDatabase?
     
@@ -36,8 +38,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         copyDatabase()
         dbInit()
+        
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self
+        
+        todosTableView.delegate = self
+        todosTableView.dataSource = self
+        todosTableView.separatorStyle = .none
         changeCellDesign()
     }
     
@@ -86,6 +93,22 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         cell.categoryNameLabel.text = "Deneme"
         
         cell.layer.cornerRadius = 15
+        
+        return cell
+    }
+}
+
+extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = todosTableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! TodoTableViewCell
+        
+        cell.todoTitleLabel.text = "Todo \(indexPath.row)"
+        cell.todoDescLabel.text = "Todo desc \(indexPath.row)"
+        cell.todoCellBackground.layer.cornerRadius = 10
         
         return cell
     }
