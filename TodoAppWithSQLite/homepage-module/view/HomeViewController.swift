@@ -14,6 +14,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var todosTableView: UITableView!
     
+    
+    @IBOutlet weak var addCategoryButton: UIButton!
+    
     // Database object
     var db:FMDatabase?
     

@@ -125,7 +125,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frw-31-q1q">
-                                                            <rect key="frame" x="10" y="40" width="38" height="18"/>
+                                                            <rect key="frame" x="10" y="40" width="37.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="subtitleColor"/>
                                                             <nil key="highlightedColor"/>
@@ -170,6 +170,7 @@
                         <constraints>
                             <constraint firstItem="roA-Sd-fzB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="2ca-Gy-MmD"/>
                             <constraint firstItem="YEe-lt-dPm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="2pu-1O-fJI"/>
+                            <constraint firstItem="8zs-ZX-xCo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="353" id="4dS-8J-h4Q"/>
                             <constraint firstItem="Kdo-go-shQ" firstAttribute="top" secondItem="roA-Sd-fzB" secondAttribute="bottom" id="4g1-ow-Utp"/>
                             <constraint firstItem="Kdo-go-shQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AQc-2h-69X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YEe-lt-dPm" secondAttribute="trailing" constant="10" id="Aj2-1P-OVZ"/>
@@ -185,6 +186,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="What's up, Yago!" id="NrV-zq-HYP"/>
                     <connections>
+                        <outlet property="addCategoryButton" destination="8zs-ZX-xCo" id="kBG-sg-wZb"/>
                         <outlet property="categoriesCollectionView" destination="Kdo-go-shQ" id="yQE-OR-1YI"/>
                         <outlet property="todosTableView" destination="Kfh-C1-vAR" id="EAr-Q8-vIF"/>
                     </connections>
