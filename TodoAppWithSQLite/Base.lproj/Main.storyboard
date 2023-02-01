@@ -157,6 +157,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zs-ZX-xCo">
+                                <rect key="frame" x="353" y="154" width="41" height="47.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="29"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -169,7 +176,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="roA-Sd-fzB" secondAttribute="trailing" constant="10" id="C9h-W9-W9A"/>
                             <constraint firstItem="Kfh-C1-vAR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="EX9-C7-Gwr"/>
                             <constraint firstItem="YEe-lt-dPm" firstAttribute="top" secondItem="Kdo-go-shQ" secondAttribute="bottom" constant="25" id="GAb-I8-8vw"/>
+                            <constraint firstItem="8zs-ZX-xCo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Qk8-9y-sBy"/>
                             <constraint firstItem="roA-Sd-fzB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="VIU-oW-hiB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8zs-ZX-xCo" secondAttribute="trailing" constant="20" id="bKM-00-v9W"/>
                             <constraint firstItem="Kfh-C1-vAR" firstAttribute="top" secondItem="YEe-lt-dPm" secondAttribute="bottom" constant="10" id="e5b-tw-kYL"/>
                             <constraint firstItem="Kfh-C1-vAR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="khS-8z-pzz"/>
                         </constraints>
