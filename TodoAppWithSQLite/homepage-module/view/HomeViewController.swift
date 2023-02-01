@@ -7,7 +7,10 @@
 
 import UIKit
 
-class CategoriesView: UIViewController {
+class HomeViewController: UIViewController {
+    
+    
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
     // Database object
     var db:FMDatabase?
@@ -33,6 +36,28 @@ class CategoriesView: UIViewController {
         super.viewDidLoad()
         copyDatabase()
         dbInit()
+        categoriesCollectionView.delegate = self
+        categoriesCollectionView.dataSource = self
+        changeCellDesign()
+    }
+    
+    func changeCellDesign() {
+        let design = UICollectionViewFlowLayout()
+        
+        design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        design.minimumLineSpacing = 15
+        design.minimumInteritemSpacing = 15
+        
+        let screenWidth = UIScreen.main.bounds.width
+        
+        let itemWidth = (screenWidth - 70) / 1.8
+        
+        design.itemSize = CGSize(width: itemWidth, height: itemWidth / 1.7)
+        
+        design.scrollDirection = .horizontal
+        
+        categoriesCollectionView.collectionViewLayout = design
+        
     }
     
     func dbInit() {
@@ -47,4 +72,23 @@ class CategoriesView: UIViewController {
           db = FMDatabase(path: databaseURL.path)
     }
 }
+
+
+extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoryCollectionViewCell
+ 
+        cell.categoryNameLabel.text = "Deneme"
+        
+        cell.layer.cornerRadius = 15
+        
+        return cell
+    }
+}
+
 
