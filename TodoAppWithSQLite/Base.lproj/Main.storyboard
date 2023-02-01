@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,6 +62,7 @@
                                                         </label>
                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v3g-ay-K7k">
                                                             <rect key="frame" x="10" y="87" width="63" height="4"/>
+                                                            <color key="progressTintColor" systemColor="systemIndigoColor"/>
                                                         </progressView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,7 +164,25 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="29"/>
+                                    <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addCategoryBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LQu-J9-1J7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQV-xe-vBY">
+                                <rect key="frame" x="274" y="802" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Gvp-Ks-FVE"/>
+                                    <constraint firstAttribute="width" constant="120" id="M8M-Nm-FZD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Todo +">
+                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addTodoBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k7r-MC-Vty"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -172,8 +192,10 @@
                             <constraint firstItem="YEe-lt-dPm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="2pu-1O-fJI"/>
                             <constraint firstItem="8zs-ZX-xCo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="353" id="4dS-8J-h4Q"/>
                             <constraint firstItem="Kdo-go-shQ" firstAttribute="top" secondItem="roA-Sd-fzB" secondAttribute="bottom" id="4g1-ow-Utp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZQV-xe-vBY" secondAttribute="trailing" constant="20" id="7tc-Zq-mDF"/>
                             <constraint firstItem="Kdo-go-shQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AQc-2h-69X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YEe-lt-dPm" secondAttribute="trailing" constant="10" id="Aj2-1P-OVZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZQV-xe-vBY" secondAttribute="bottom" constant="20" id="BJI-ZX-i0H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="roA-Sd-fzB" secondAttribute="trailing" constant="10" id="C9h-W9-W9A"/>
                             <constraint firstItem="Kfh-C1-vAR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="EX9-C7-Gwr"/>
                             <constraint firstItem="YEe-lt-dPm" firstAttribute="top" secondItem="Kdo-go-shQ" secondAttribute="bottom" constant="25" id="GAb-I8-8vw"/>
@@ -186,7 +208,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="What's up, Yago!" id="NrV-zq-HYP"/>
                     <connections>
-                        <outlet property="addCategoryButton" destination="8zs-ZX-xCo" id="kBG-sg-wZb"/>
                         <outlet property="categoriesCollectionView" destination="Kdo-go-shQ" id="yQE-OR-1YI"/>
                         <outlet property="todosTableView" destination="Kfh-C1-vAR" id="EAr-Q8-vIF"/>
                     </connections>
@@ -219,13 +240,16 @@
     </scenes>
     <resources>
         <namedColor name="backgroundColor">
-            <color red="0.98039215686274506" green="0.98431372549019602" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98000001907348633" green="0.98400002717971802" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="subtitleColor">
-            <color red="0.71372549019607845" green="0.72941176470588232" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.71399998664855957" green="0.72899997234344482" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="titleTextColor">
-            <color red="0.15686274509803921" green="0.19607843137254902" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.15700000524520874" green="0.19599999487400055" blue="0.35699999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

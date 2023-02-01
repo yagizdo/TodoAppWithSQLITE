@@ -14,9 +14,6 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var todosTableView: UITableView!
     
-    
-    @IBOutlet weak var addCategoryButton: UIButton!
-    
     // Database object
     var db:FMDatabase?
     
@@ -51,6 +48,14 @@ class HomeViewController: UIViewController {
         changeCellDesign()
     }
     
+    
+    @IBAction func addCategoryBtn(_ sender: Any) {
+        print("Category added")
+    }
+    
+    @IBAction func addTodoBtn(_ sender: Any) {
+        print("Todo Added")
+    }
     func changeCellDesign() {
         let design = UICollectionViewFlowLayout()
         
