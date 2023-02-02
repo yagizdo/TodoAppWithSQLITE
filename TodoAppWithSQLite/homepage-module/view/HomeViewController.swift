@@ -14,8 +14,13 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var todosTableView: UITableView!
     
-    // Database object
-    var db:FMDatabase?
+    var todos = [Todo]()
+    
+    var categories = [Category]()
+    
+    var homeViewPresenterDelegate: ViewToPresenterHomeViewProtocol?
+    
+    
     
     // When the application runs for the first time, we make it copy our sqlite file into the phone.
     func copyDatabase() {
@@ -36,16 +41,22 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        copyDatabase()
-        dbInit()
-        
+        // Categories
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self
         
+        // Todos
         todosTableView.delegate = self
         todosTableView.dataSource = self
         todosTableView.separatorStyle = .none
-        changeCellDesign()
+        changeCategoriesCellDesign()
+        
+        copyDatabase()
+        
+        HomeViewRouter.createModule(ref: self)
+        
+        homeViewPresenterDelegate?.getCategories()
+        homeViewPresenterDelegate?.getTodos(categoryID: 1)
     }
     
     
@@ -56,7 +67,7 @@ class HomeViewController: UIViewController {
     @IBAction func addTodoBtn(_ sender: Any) {
         print("Todo Added")
     }
-    func changeCellDesign() {
+    func changeCategoriesCellDesign() {
         let design = UICollectionViewFlowLayout()
         
         design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -74,31 +85,30 @@ class HomeViewController: UIViewController {
         categoriesCollectionView.collectionViewLayout = design
         
     }
+}
+
+extension HomeViewController : PresenterToViewHomeViewProtocol {
+    func sendDataToView(todos: [Todo]) {
+        self.todos = todos
+        self.todosTableView.reloadData()
+    }
     
-    func dbInit() {
-        // We want to access the database as soon as it runs
-        // Public path where this database is
-          let destinationPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-          
-        // Now we represent the original copy location and give the file a name it will copy with the name we gave
-          let databaseURL = URL(fileURLWithPath: destinationPath).appendingPathComponent("todoapp.db")
-          
-        // we provide access to the database
-          db = FMDatabase(path: databaseURL.path)
+    func sendDataToView(categories: [Category]) {
+        self.categories = categories
+        self.categoriesCollectionView.reloadData()
     }
 }
 
-
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource {
-    
+   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoryCollectionViewCell
  
-        cell.categoryNameLabel.text = "Deneme"
+        cell.categoryNameLabel.text = categories[indexPath.row].category_name
         
         cell.layer.cornerRadius = 15
         
@@ -108,18 +118,19 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return todos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = todosTableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! TodoTableViewCell
         
-        cell.todoTitleLabel.text = "Todo \(indexPath.row)"
-        cell.todoDescLabel.text = "Todo desc \(indexPath.row)"
+        let todo = todos[indexPath.row]
+        
+        cell.todoTitleLabel.text = todo.todo_title
+        cell.todoDescLabel.text = todo.todo_description
         cell.todoCellBackground.layer.cornerRadius = 10
         
         return cell
     }
 }
-
 
