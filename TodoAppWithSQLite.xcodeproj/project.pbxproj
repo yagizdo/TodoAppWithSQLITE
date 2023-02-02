@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		101C226F298AE26800EAB568 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C226E298AE26800EAB568 /* CategoryCollectionViewCell.swift */; };
 		101C2271298B056700EAB568 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C2270298B056700EAB568 /* TodoTableViewCell.swift */; };
+		101E1AC8298C5BFC00F8832D /* todohomework.db in Resources */ = {isa = PBXBuildFile; fileRef = 101E1AC7298C5BFC00F8832D /* todohomework.db */; };
 		108236DF298A8037008D0E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108236DE298A8037008D0E9D /* AppDelegate.swift */; };
 		108236E1298A8037008D0E9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108236E0298A8037008D0E9D /* SceneDelegate.swift */; };
 		108236E3298A8037008D0E9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108236E2298A8037008D0E9D /* HomeViewController.swift */; };
 		108236E6298A8037008D0E9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108236E4298A8037008D0E9D /* Main.storyboard */; };
 		108236E8298A8038008D0E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 108236E7298A8038008D0E9D /* Assets.xcassets */; };
 		108236EB298A8038008D0E9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108236E9298A8038008D0E9D /* LaunchScreen.storyboard */; };
-		108236F3298A89B9008D0E9D /* todoapp.db in Resources */ = {isa = PBXBuildFile; fileRef = 108236F2298A89B9008D0E9D /* todoapp.db */; };
 		10823700298A8A13008D0E9D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 108236F6298A8A13008D0E9D /* FMDatabaseQueue.m */; };
 		10823701298A8A13008D0E9D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 108236F7298A8A13008D0E9D /* FMResultSet.m */; };
 		10823702298A8A13008D0E9D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 108236F8298A8A13008D0E9D /* FMDatabaseAdditions.m */; };
@@ -32,6 +32,7 @@
 /* Begin PBXFileReference section */
 		101C226E298AE26800EAB568 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		101C2270298B056700EAB568 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		101E1AC7298C5BFC00F8832D /* todohomework.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = todohomework.db; sourceTree = "<group>"; };
 		108236DB298A8037008D0E9D /* TodoAppWithSQLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAppWithSQLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		108236DE298A8037008D0E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		108236E0298A8037008D0E9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		108236E7298A8038008D0E9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		108236EA298A8038008D0E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		108236EC298A8038008D0E9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		108236F2298A89B9008D0E9D /* todoapp.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = todoapp.db; sourceTree = "<group>"; };
 		108236F4298A8A12008D0E9D /* TodoAppWithSQLite-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodoAppWithSQLite-Bridging-Header.h"; sourceTree = "<group>"; };
 		108236F5298A8A13008D0E9D /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
 		108236F6298A8A13008D0E9D /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				108236E7298A8038008D0E9D /* Assets.xcassets */,
 				108236E9298A8038008D0E9D /* LaunchScreen.storyboard */,
 				108236EC298A8038008D0E9D /* Info.plist */,
-				108236F2298A89B9008D0E9D /* todoapp.db */,
+				101E1AC7298C5BFC00F8832D /* todohomework.db */,
 				108236FF298A8A13008D0E9D /* FMDatabase.h */,
 				108236FD298A8A13008D0E9D /* FMDatabase.m */,
 				108236FE298A8A13008D0E9D /* FMDatabaseAdditions.h */,
@@ -247,7 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				108236EB298A8038008D0E9D /* LaunchScreen.storyboard in Resources */,
-				108236F3298A89B9008D0E9D /* todoapp.db in Resources */,
+				101E1AC8298C5BFC00F8832D /* todohomework.db in Resources */,
 				108236E8298A8038008D0E9D /* Assets.xcassets in Resources */,
 				108236E6298A8037008D0E9D /* Main.storyboard in Resources */,
 			);

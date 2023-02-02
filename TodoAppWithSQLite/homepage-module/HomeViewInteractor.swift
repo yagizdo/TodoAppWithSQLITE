@@ -22,7 +22,7 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
           let destinationPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
           
         // Now we represent the original copy location and give the file a name it will copy with the name we gave
-          let databaseURL = URL(fileURLWithPath: destinationPath).appendingPathComponent("todoapp.db")
+          let databaseURL = URL(fileURLWithPath: destinationPath).appendingPathComponent("todohomework.db")
           
         // we provide access to the database
           db = FMDatabase(path: databaseURL.path)

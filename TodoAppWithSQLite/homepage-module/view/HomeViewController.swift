@@ -26,9 +26,9 @@ class HomeViewController: UIViewController {
     
     // When the application runs for the first time, we make it copy our sqlite file into the phone.
     func copyDatabase() {
-        let bundlePath = Bundle.main.path(forResource: "todoapp", ofType: ".db")
+        let bundlePath = Bundle.main.path(forResource: "todohomework", ofType: ".db")
         let destinationPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        let copyPath = URL(fileURLWithPath: destinationPath).appendingPathComponent("todoapp.db")
+        let copyPath = URL(fileURLWithPath: destinationPath).appendingPathComponent("todohomework.db")
         let fm = FileManager.default
         if fm.fileExists(atPath: copyPath.path) {
             print("The database already exists")
@@ -59,7 +59,7 @@ class HomeViewController: UIViewController {
         
         homeViewPresenterDelegate?.getCategories()
         homeViewPresenterDelegate?.getTodos(categoryID: 1)
-        todosListTitleLabel.text = "\(categories[0].category_name!) Todos"
+        todosListTitleLabel.text = "ddd Todos"
     }
     
     
