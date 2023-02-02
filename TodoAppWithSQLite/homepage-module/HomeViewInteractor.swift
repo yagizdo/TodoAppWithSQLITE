@@ -52,6 +52,7 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
     }
     
     func getTodos(categoryID: Int) {
+        todos.removeAll()
         db?.open()
         
         do {

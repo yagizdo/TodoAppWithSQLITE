@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var todosTableView: UITableView!
     
+    @IBOutlet weak var todosListTitleLabel: UILabel!
+    
     var todos = [Todo]()
     
     var categories = [Category]()
@@ -57,6 +59,7 @@ class HomeViewController: UIViewController {
         
         homeViewPresenterDelegate?.getCategories()
         homeViewPresenterDelegate?.getTodos(categoryID: 1)
+        todosListTitleLabel.text = "\(categories[0].category_name!) Todos"
     }
     
     
@@ -113,6 +116,14 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         cell.layer.cornerRadius = 15
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        todosListTitleLabel.text = "\(category.category_name!) Todos"
+        
+        homeViewPresenterDelegate?.getTodos(categoryID: category.category_id!)
+        self.todosTableView.reloadData()
     }
 }
 

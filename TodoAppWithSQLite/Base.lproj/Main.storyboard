@@ -209,6 +209,7 @@
                     <navigationItem key="navigationItem" title="What's up, Yago!" id="NrV-zq-HYP"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="Kdo-go-shQ" id="yQE-OR-1YI"/>
+                        <outlet property="todosListTitleLabel" destination="YEe-lt-dPm" id="ZNY-Sg-pdH"/>
                         <outlet property="todosTableView" destination="Kfh-C1-vAR" id="EAr-Q8-vIF"/>
                     </connections>
                 </viewController>
