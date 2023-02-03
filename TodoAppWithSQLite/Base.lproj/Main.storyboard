@@ -252,7 +252,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhD-M5-ZDX">
-                                <rect key="frame" x="50" y="244" width="314" height="40"/>
+                                <rect key="frame" x="60" y="244" width="294" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="efg-JY-wHr"/>
                                 </constraints>
@@ -260,7 +260,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Scb-3Y-3Xh">
-                                <rect key="frame" x="50" y="334" width="314" height="40"/>
+                                <rect key="frame" x="60" y="334" width="294" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="U63-dE-vc0"/>
                                 </constraints>
@@ -268,8 +268,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlO-AR-vnd">
-                                <rect key="frame" x="50" y="474" width="314" height="40"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <rect key="frame" x="60" y="424" width="294" height="40"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JSe-Yv-cDb"/>
                                 </constraints>
@@ -280,19 +280,32 @@
                                     <action selector="onClickSelectCategoryBTN:" destination="Nju-rL-afu" eventType="touchUpInside" id="Lff-qJ-ym1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jem-a8-Sj6">
+                                <rect key="frame" x="30" y="564" width="354" height="35"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Todo"/>
+                                <connections>
+                                    <action selector="onClickAddTodoBtn:" destination="Nju-rL-afu" eventType="touchUpInside" id="jP4-6W-9Nt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b5H-b7-994"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SlO-AR-vnd" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="50" id="1eS-ji-6wX"/>
-                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="SlO-AR-vnd" secondAttribute="trailing" constant="50" id="7Kv-eJ-eJK"/>
-                            <constraint firstItem="nhD-M5-ZDX" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="50" id="8Zo-LX-AMs"/>
-                            <constraint firstItem="Scb-3Y-3Xh" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="50" id="NiI-P0-QAN"/>
-                            <constraint firstItem="SlO-AR-vnd" firstAttribute="top" secondItem="Scb-3Y-3Xh" secondAttribute="bottom" constant="100" id="VLy-HZ-ZRw"/>
+                            <constraint firstItem="SlO-AR-vnd" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="60" id="1eS-ji-6wX"/>
+                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="SlO-AR-vnd" secondAttribute="trailing" constant="60" id="7Kv-eJ-eJK"/>
+                            <constraint firstItem="nhD-M5-ZDX" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="60" id="8Zo-LX-AMs"/>
+                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="jem-a8-Sj6" secondAttribute="trailing" constant="30" id="9Vw-xj-pFv"/>
+                            <constraint firstItem="Scb-3Y-3Xh" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="60" id="NiI-P0-QAN"/>
+                            <constraint firstItem="jem-a8-Sj6" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="30" id="OjA-My-5o0"/>
+                            <constraint firstItem="jem-a8-Sj6" firstAttribute="top" secondItem="SlO-AR-vnd" secondAttribute="bottom" constant="100" id="Ted-A2-T17"/>
+                            <constraint firstItem="SlO-AR-vnd" firstAttribute="top" secondItem="Scb-3Y-3Xh" secondAttribute="bottom" constant="50" id="VLy-HZ-ZRw"/>
                             <constraint firstItem="nhD-M5-ZDX" firstAttribute="top" secondItem="b5H-b7-994" secondAttribute="top" constant="100" id="hSN-bi-6zU"/>
                             <constraint firstItem="Scb-3Y-3Xh" firstAttribute="top" secondItem="nhD-M5-ZDX" secondAttribute="bottom" constant="50" id="hX4-2n-cVg"/>
-                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="Scb-3Y-3Xh" secondAttribute="trailing" constant="50" id="t9z-si-Geu"/>
-                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="nhD-M5-ZDX" secondAttribute="trailing" constant="50" id="xbt-xy-tvb"/>
+                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="Scb-3Y-3Xh" secondAttribute="trailing" constant="60" id="t9z-si-Geu"/>
+                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="nhD-M5-ZDX" secondAttribute="trailing" constant="60" id="xbt-xy-tvb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Todo" id="kYq-q8-prm"/>
@@ -344,6 +357,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

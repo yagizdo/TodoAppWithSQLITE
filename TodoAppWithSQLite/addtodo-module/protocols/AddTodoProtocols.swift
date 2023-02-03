@@ -12,14 +12,14 @@ protocol ViewToPresenterAddTodoProtocol {
     var interactor : PresenterToInteractorAddTodoProtocol? {get set}
     var view : PresenterToViewAddTodoProtocol? {get set}
     
-    func addTodo(todo:Todo)
+    func addTodo(todoTitle:String,todoDescription:String,categoryID:Int)
     func getCategories()
 }
 
 protocol PresenterToInteractorAddTodoProtocol {
     var presenter:InteractorToPresenterAddTodoProtocol? {get set}
     
-    func addTodo(todo:Todo)
+    func addTodo(todoTitle:String,todoDescription:String,categoryID:Int)
     func getCategories()
 }
 

@@ -12,8 +12,8 @@ class AddTodoPresenter : ViewToPresenterAddTodoProtocol {
     var interactor: PresenterToInteractorAddTodoProtocol?
     var view: PresenterToViewAddTodoProtocol?
     
-    func addTodo(todo: Todo) {
-        interactor?.addTodo(todo: todo)
+    func addTodo(todoTitle:String,todoDescription:String,categoryID:Int) {
+        interactor?.addTodo(todoTitle:todoTitle,todoDescription:todoDescription,categoryID:categoryID)
     }
     func getCategories() {
         interactor?.getCategories()

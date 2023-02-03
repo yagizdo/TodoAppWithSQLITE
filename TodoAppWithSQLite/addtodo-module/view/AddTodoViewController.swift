@@ -27,6 +27,8 @@ class AddTodoViewController: UIViewController {
     var categories = [Category]()
     
     var selectedCategory : Category?
+    
+    var todo:Todo?
 
     var addTodoPresentDelegate:ViewToPresenterAddTodoProtocol?
     
@@ -75,7 +77,30 @@ class AddTodoViewController: UIViewController {
             self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width , height: 0)
         },completion: nil )
     }
-
+    
+    func showEmptyAlert(title:String,message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Okay", style: .default)
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+    }
+    
+    
+    @IBAction func onClickAddTodoBtn(_ sender: Any) {
+        
+        
+        if let todo_title = todoTitleTF.text, let todo_description = todoDescriptionTF.text {
+            if todo_title.isEmpty {
+                showEmptyAlert(title: "Please write title", message: "Title can not be empty")
+            } else if selectedCategory == nil {
+                showEmptyAlert(title: "Please select category", message: "Category can not be empty")
+            } else {
+                addTodoPresentDelegate?.addTodo(todoTitle: todo_title, todoDescription: todo_description, categoryID: selectedCategory!.category_id!)
+            }
+        }
+        
+    }
+    
     
     // Select category button
     @IBAction func onClickSelectCategoryBTN(_ sender: Any) {

@@ -28,11 +28,11 @@ class AddTodoInteractor : PresenterToInteractorAddTodoProtocol {
           db = FMDatabase(path: databaseURL.path)
     }
     
-    func addTodo(todo: Todo) {
+    func addTodo(todoTitle:String,todoDescription:String,categoryID:Int) {
         db?.open()
         
         do {
-            try db!.executeUpdate("INSERT INTO todos (todo_title,todo_description,category_id) VALUES (?,?,?)", values: [todo.todo_title!,todo.todo_description ?? "",todo.category_id!])
+            try db!.executeUpdate("INSERT INTO todos (todo_title,todo_description,category_id) VALUES (?,?,?)", values: [todoTitle,todoDescription,String(categoryID)])
         } catch {
             print(error.localizedDescription)
         }
