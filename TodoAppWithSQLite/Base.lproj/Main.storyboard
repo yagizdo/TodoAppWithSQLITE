@@ -207,6 +207,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addTodoBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k7r-MC-Vty"/>
+                                    <segue destination="Nju-rL-afu" kind="show" id="TI9-2n-fTr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -242,6 +243,69 @@
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="-27.455357142857142"/>
         </scene>
+        <!--Add Todo-->
+        <scene sceneID="i8P-TF-eEY">
+            <objects>
+                <viewController id="Nju-rL-afu" customClass="AddTodoViewController" customModule="TodoAppWithSQLite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y9H-p2-OWi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhD-M5-ZDX">
+                                <rect key="frame" x="50" y="244" width="314" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="efg-JY-wHr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Scb-3Y-3Xh">
+                                <rect key="frame" x="50" y="334" width="314" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="U63-dE-vc0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlO-AR-vnd">
+                                <rect key="frame" x="50" y="474" width="314" height="40"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JSe-Yv-cDb"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Select Category"/>
+                                <connections>
+                                    <action selector="onClickSelectCategoryBTN:" destination="Nju-rL-afu" eventType="touchUpInside" id="Lff-qJ-ym1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b5H-b7-994"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SlO-AR-vnd" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="50" id="1eS-ji-6wX"/>
+                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="SlO-AR-vnd" secondAttribute="trailing" constant="50" id="7Kv-eJ-eJK"/>
+                            <constraint firstItem="nhD-M5-ZDX" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="50" id="8Zo-LX-AMs"/>
+                            <constraint firstItem="Scb-3Y-3Xh" firstAttribute="leading" secondItem="b5H-b7-994" secondAttribute="leading" constant="50" id="NiI-P0-QAN"/>
+                            <constraint firstItem="SlO-AR-vnd" firstAttribute="top" secondItem="Scb-3Y-3Xh" secondAttribute="bottom" constant="100" id="VLy-HZ-ZRw"/>
+                            <constraint firstItem="nhD-M5-ZDX" firstAttribute="top" secondItem="b5H-b7-994" secondAttribute="top" constant="100" id="hSN-bi-6zU"/>
+                            <constraint firstItem="Scb-3Y-3Xh" firstAttribute="top" secondItem="nhD-M5-ZDX" secondAttribute="bottom" constant="50" id="hX4-2n-cVg"/>
+                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="Scb-3Y-3Xh" secondAttribute="trailing" constant="50" id="t9z-si-Geu"/>
+                            <constraint firstItem="b5H-b7-994" firstAttribute="trailing" secondItem="nhD-M5-ZDX" secondAttribute="trailing" constant="50" id="xbt-xy-tvb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Todo" id="kYq-q8-prm"/>
+                    <connections>
+                        <outlet property="selectCategoryBTN" destination="SlO-AR-vnd" id="Xbc-bR-AOv"/>
+                        <outlet property="todoDescriptionTF" destination="Scb-3Y-3Xh" id="GZ7-qM-zx9"/>
+                        <outlet property="todoTitleTF" destination="nhD-M5-ZDX" id="S8m-cR-cOw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0th-qp-dH1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="-27"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kqV-ai-MNN">
             <objects>
@@ -275,6 +339,9 @@
         <namedColor name="titleTextColor">
             <color red="0.15700000524520874" green="0.19599999487400055" blue="0.35699999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

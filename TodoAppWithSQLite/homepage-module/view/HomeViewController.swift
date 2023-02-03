@@ -96,7 +96,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func addTodoBtn(_ sender: Any) {
-        print("Todo Added")
     }
     
     func changeCategoriesCellDesign() {
