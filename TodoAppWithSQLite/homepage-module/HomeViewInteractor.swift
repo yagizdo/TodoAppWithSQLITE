@@ -101,6 +101,7 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
             // Remove Category
             try db!.executeUpdate("DELETE FROM categories WHERE category_id = ?", values: [categoryID])
             getCategories()
+            getTodos(categoryID: categoryID)
         } catch {
             print(error.localizedDescription)
         }

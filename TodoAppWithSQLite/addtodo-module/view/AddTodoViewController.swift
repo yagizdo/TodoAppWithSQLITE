@@ -96,6 +96,7 @@ class AddTodoViewController: UIViewController {
                 showEmptyAlert(title: "Please select category", message: "Category can not be empty")
             } else {
                 addTodoPresentDelegate?.addTodo(todoTitle: todo_title, todoDescription: todo_description, categoryID: selectedCategory!.category_id!)
+                self.navigationController?.popViewController(animated: true)
             }
         }
         
