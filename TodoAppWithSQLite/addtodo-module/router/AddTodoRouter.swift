@@ -7,6 +7,19 @@
 
 import Foundation
 
-class AddTodoRouter {
-    
+class AddTodoRouter : PresenterToRouterAddTodoProtocol {
+   static func createModule(ref: AddTodoViewController) {
+        
+        let presenter = AddTodoPresenter()
+        
+        // View
+        ref.addTodoPresentDelegate = presenter
+        
+        // Presenter
+        ref.addTodoPresentDelegate?.view = ref
+        ref.addTodoPresentDelegate?.interactor = AddTodoInteractor()
+        
+        // Interactor
+        ref.addTodoPresentDelegate?.interactor?.presenter = presenter
+    }
 }

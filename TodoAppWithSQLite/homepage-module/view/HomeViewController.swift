@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
     
     var categories = [Category]()
     
+    var selectedCategoryIndex:Int = 0
+    
     var homeViewPresenterDelegate: ViewToPresenterHomeViewProtocol?
     
     
@@ -64,6 +66,10 @@ class HomeViewController: UIViewController {
         } else {
             todosListTitleLabel.text = "\(categories[0].category_name!) Todos"
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        homeViewPresenterDelegate?.getTodos(categoryID: selectedCategoryIndex)
     }
     
     

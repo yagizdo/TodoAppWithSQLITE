@@ -26,6 +26,10 @@ class AddTodoViewController: UIViewController {
     
     var categories = [Category]()
     
+    var selectedCategory : Category?
+
+    var addTodoPresentDelegate:ViewToPresenterAddTodoProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,10 +37,9 @@ class AddTodoViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(AddTodoCategoriesCell.self, forCellReuseIdentifier: "addTodoCategoriesCell")
         
-        categories.append(Category(category_id: 1, category_name: "deneme 1"))
-        categories.append(Category(category_id: 2, category_name: "deneme 2"))
-        categories.append(Category(category_id: 3, category_name: "deneme 3"))
-        categories.append(Category(category_id: 4, category_name: "deneme 4"))
+        AddTodoRouter.createModule(ref: self)
+        
+        addTodoPresentDelegate?.getCategories()
     }
     
     // Create transparent view for list
@@ -101,8 +104,15 @@ extension AddTodoViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = categories[indexPath.row]
-        selectCategoryBTN.setTitle(category.category_name, for: .normal)
+        selectCategoryBTN.setTitle("Selected Category : \(category.category_name!)", for: .normal)
+        self.selectedCategory = category
         removeTransparentView()
     }
     
+}
+
+extension AddTodoViewController : PresenterToViewAddTodoProtocol {
+    func sendDataToView(categories: [Category]) {
+        self.categories = categories
+    }
 }
