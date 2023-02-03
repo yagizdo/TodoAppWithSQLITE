@@ -59,12 +59,40 @@ class HomeViewController: UIViewController {
         
         homeViewPresenterDelegate?.getCategories()
         homeViewPresenterDelegate?.getTodos(categoryID: 1)
-        todosListTitleLabel.text = "ddd Todos"
+        if categories.isEmpty {
+            todosListTitleLabel.text = "Daily Todos"
+        } else {
+            todosListTitleLabel.text = "\(categories[0].category_name!) Todos"
+        }
     }
     
     
     @IBAction func addCategoryBtn(_ sender: Any) {
-        print("Category added")
+        let alert = UIAlertController(title: "Add Category", message: "Please Write Category Name", preferredStyle: .alert)
+        alert.addTextField() {
+            textfield in
+            textfield.placeholder = "Category Name"
+        }
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive)
+        
+        let okayButton = UIAlertAction(title: "Add Category", style: .default) {
+         action in
+            if var categoryName = alert.textFields![0].text {
+                if categoryName.isEmpty {
+                    print("Lutfen isim girin")
+                } else {
+                    categoryName = categoryName.replacingOccurrences(of: " ", with: "")
+                    categoryName = categoryName.capitalizedSentence
+                    self.homeViewPresenterDelegate?.addCategory(categoryName: categoryName)
+                }
+            }
+        }
+        
+        alert.addAction(okayButton)
+        alert.addAction(cancelButton)
+        
+        self.present(alert, animated: true)
     }
     
     @IBAction func addTodoBtn(_ sender: Any) {

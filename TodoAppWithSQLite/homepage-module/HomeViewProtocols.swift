@@ -14,6 +14,7 @@ protocol ViewToPresenterHomeViewProtocol {
     
     func getCategories()
     func getTodos(categoryID:Int)
+    func addCategory(categoryName:String)
 }
 
 protocol PresenterToInteractorHomeViewProtocol {
@@ -22,6 +23,7 @@ protocol PresenterToInteractorHomeViewProtocol {
     
     func getCategories()
     func getTodos(categoryID:Int)
+    func addCategory(categoryName:String)
 }
 
 protocol InteractorToPresenterHomeViewProtocol {

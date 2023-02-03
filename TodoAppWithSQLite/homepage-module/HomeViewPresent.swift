@@ -18,6 +18,10 @@ class HomeViewPresenter : ViewToPresenterHomeViewProtocol {
     func getTodos(categoryID: Int) {
         interactor?.getTodos(categoryID: categoryID)
     }
+    
+    func addCategory(categoryName: String) {
+        interactor?.addCategory(categoryName: categoryName)
+    }
 }
 
 extension HomeViewPresenter : InteractorToPresenterHomeViewProtocol {

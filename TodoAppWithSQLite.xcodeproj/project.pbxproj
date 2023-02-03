@@ -21,6 +21,7 @@
 		10823702298A8A13008D0E9D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 108236F8298A8A13008D0E9D /* FMDatabaseAdditions.m */; };
 		10823703298A8A13008D0E9D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 108236FA298A8A13008D0E9D /* FMDatabasePool.m */; };
 		10823704298A8A13008D0E9D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 108236FD298A8A13008D0E9D /* FMDatabase.m */; };
+		10C03CB2298D534A0016F107 /* string_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C03CB1298D534A0016F107 /* string_extensions.swift */; };
 		10D2F1DD298BD7F00002E3C0 /* HomeViewPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1DC298BD7F00002E3C0 /* HomeViewPresent.swift */; };
 		10D2F1DF298BD84A0002E3C0 /* HomeViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1DE298BD84A0002E3C0 /* HomeViewProtocols.swift */; };
 		10D2F1E1298BD8540002E3C0 /* HomeViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1E0298BD8540002E3C0 /* HomeViewInteractor.swift */; };
@@ -53,6 +54,7 @@
 		108236FD298A8A13008D0E9D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		108236FE298A8A13008D0E9D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		108236FF298A8A13008D0E9D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		10C03CB1298D534A0016F107 /* string_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = string_extensions.swift; sourceTree = "<group>"; };
 		10D2F1DC298BD7F00002E3C0 /* HomeViewPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewPresent.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewPresent.swift"; sourceTree = SOURCE_ROOT; };
 		10D2F1DE298BD84A0002E3C0 /* HomeViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewProtocols.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewProtocols.swift"; sourceTree = SOURCE_ROOT; };
 		10D2F1E0298BD8540002E3C0 /* HomeViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewInteractor.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewInteractor.swift"; sourceTree = SOURCE_ROOT; };
@@ -153,6 +155,7 @@
 		108236DD298A8037008D0E9D /* TodoAppWithSQLite */ = {
 			isa = PBXGroup;
 			children = (
+				10C03CB0298D533D0016F107 /* extensions */,
 				10D2F1E5298BE4A90002E3C0 /* entity */,
 				101C2265298AD9FC00EAB568 /* homepage-module */,
 				108236DE298A8037008D0E9D /* AppDelegate.swift */,
@@ -176,6 +179,14 @@
 				108236F4298A8A12008D0E9D /* TodoAppWithSQLite-Bridging-Header.h */,
 			);
 			path = TodoAppWithSQLite;
+			sourceTree = "<group>";
+		};
+		10C03CB0298D533D0016F107 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10C03CB1298D534A0016F107 /* string_extensions.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		10D2F1E5298BE4A90002E3C0 /* entity */ = {
@@ -276,6 +287,7 @@
 				10823701298A8A13008D0E9D /* FMResultSet.m in Sources */,
 				10823702298A8A13008D0E9D /* FMDatabaseAdditions.m in Sources */,
 				10823704298A8A13008D0E9D /* FMDatabase.m in Sources */,
+				10C03CB2298D534A0016F107 /* string_extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

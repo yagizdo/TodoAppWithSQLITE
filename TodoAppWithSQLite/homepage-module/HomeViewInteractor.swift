@@ -43,7 +43,7 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
                 
                 categories.append(category)
             }
-            presenter?.sendDataToPresenter(categories: categories)
+            presenter?.sendDataToPresenter(categories: categories.reversed())
         } catch {
             print(error.localizedDescription)
         }
@@ -69,6 +69,20 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
                 todos.append(todo)
             }
             presenter?.sendDataToPresenter(todos: todos)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
+    }
+    
+    func addCategory(categoryName: String) {
+        db?.open()
+    
+        do {
+            categories.removeAll()
+            try db!.executeUpdate("INSERT INTO categories (category_name) VALUES (?)", values: [categoryName])
+            getCategories()
         } catch {
             print(error.localizedDescription)
         }
