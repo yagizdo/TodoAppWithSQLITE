@@ -89,4 +89,18 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
         
         db?.close()
     }
+    
+    func deleteCategory(categoryID: Int) {
+        db?.open()
+        
+        do {
+            categories.removeAll()
+            try db!.executeUpdate("DELETE FROM categories WHERE category_id = ?", values: [categoryID])
+            getCategories()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
+    }
 }

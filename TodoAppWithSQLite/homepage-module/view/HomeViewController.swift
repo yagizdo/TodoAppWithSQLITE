@@ -98,6 +98,7 @@ class HomeViewController: UIViewController {
     @IBAction func addTodoBtn(_ sender: Any) {
         print("Todo Added")
     }
+    
     func changeCategoriesCellDesign() {
         let design = UICollectionViewFlowLayout()
         
@@ -138,8 +139,14 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoryCollectionViewCell
- 
-        cell.categoryNameLabel.text = categories[indexPath.row].category_name
+        
+        let category = categories[indexPath.row]
+        
+        cell.categoryNameLabel.text = category.category_name
+        
+        cell.homeViewPresenterDelegate = homeViewPresenterDelegate
+        
+        cell.categoryID = category.category_id
         
         cell.layer.cornerRadius = 15
         

@@ -39,17 +39,17 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="sbp-hy-RQx" customClass="CategoryCollectionViewCell" customModule="TodoAppWithSQLite" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="19.5" width="83" height="111"/>
+                                        <rect key="frame" x="0.0" y="11" width="123" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C3m-b5-2mD">
-                                            <rect key="frame" x="0.0" y="0.0" width="83" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="123" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Q-cc-4yL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="111"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="123" height="128"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40 Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zY1-4h-ygu">
-                                                            <rect key="frame" x="10" y="10" width="63" height="18"/>
+                                                            <rect key="frame" x="10" y="10" width="103" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="subtitleColor"/>
                                                             <nil key="highlightedColor"/>
@@ -60,23 +60,37 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhG-PJ-23q">
+                                                            <rect key="frame" x="93" y="43" width="25" height="14"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="14" id="Scl-Kf-T6f"/>
+                                                                <constraint firstAttribute="width" constant="25" id="rNA-sj-rbU"/>
+                                                            </constraints>
+                                                            <color key="tintColor" systemColor="systemRedColor"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="deleteCategoryButton:" destination="sbp-hy-RQx" eventType="touchUpInside" id="7MM-LV-ILu"/>
+                                                            </connections>
+                                                        </button>
                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v3g-ay-K7k">
-                                                            <rect key="frame" x="10" y="87" width="63" height="4"/>
+                                                            <rect key="frame" x="10" y="104" width="103" height="4"/>
                                                             <color key="progressTintColor" systemColor="systemIndigoColor"/>
                                                         </progressView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="ESa-y8-SrQ" secondAttribute="trailing" constant="10" id="0LM-LU-iMe"/>
                                                         <constraint firstItem="zY1-4h-ygu" firstAttribute="leading" secondItem="Q1Q-cc-4yL" secondAttribute="leading" constant="10" id="1LQ-5A-N6w"/>
+                                                        <constraint firstItem="ESa-y8-SrQ" firstAttribute="top" secondItem="zY1-4h-ygu" secondAttribute="bottom" constant="10" id="6Q2-lA-a6W"/>
+                                                        <constraint firstAttribute="trailing" secondItem="PhG-PJ-23q" secondAttribute="trailing" constant="5" id="FKF-d8-pFw"/>
                                                         <constraint firstItem="v3g-ay-K7k" firstAttribute="leading" secondItem="Q1Q-cc-4yL" secondAttribute="leading" constant="10" id="GDg-yb-y6C"/>
                                                         <constraint firstAttribute="trailing" secondItem="zY1-4h-ygu" secondAttribute="trailing" constant="10" id="Gga-7P-egF"/>
                                                         <constraint firstAttribute="trailing" secondItem="v3g-ay-K7k" secondAttribute="trailing" constant="10" id="KLS-Uw-XhI"/>
+                                                        <constraint firstItem="PhG-PJ-23q" firstAttribute="top" secondItem="zY1-4h-ygu" secondAttribute="bottom" constant="15" id="RQR-pq-FZc"/>
                                                         <constraint firstItem="zY1-4h-ygu" firstAttribute="top" secondItem="Q1Q-cc-4yL" secondAttribute="top" constant="10" id="Rjj-lT-6Cj"/>
-                                                        <constraint firstItem="ESa-y8-SrQ" firstAttribute="top" secondItem="zY1-4h-ygu" secondAttribute="bottom" constant="10" id="Y7j-rI-vBd"/>
-                                                        <constraint firstItem="ESa-y8-SrQ" firstAttribute="leading" secondItem="Q1Q-cc-4yL" secondAttribute="leading" constant="10" id="nEG-pf-bGS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ESa-y8-SrQ" secondAttribute="trailing" constant="50" id="jho-gY-4xZ"/>
                                                         <constraint firstAttribute="bottom" secondItem="v3g-ay-K7k" secondAttribute="bottom" constant="20" id="sk6-l8-cpj"/>
-                                                        <constraint firstItem="v3g-ay-K7k" firstAttribute="top" secondItem="ESa-y8-SrQ" secondAttribute="bottom" constant="25" id="tD9-dL-GtU"/>
+                                                        <constraint firstItem="ESa-y8-SrQ" firstAttribute="leading" secondItem="Q1Q-cc-4yL" secondAttribute="leading" constant="10" id="wnx-X0-Fp0"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -97,7 +111,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Denemeeeee Todos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEe-lt-dPm">
-                                <rect key="frame" x="25" y="366" width="379" height="18"/>
+                                <rect key="frame" x="25" y="366" width="339" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" name="subtitleColor"/>
                                 <nil key="highlightedColor"/>
@@ -194,7 +208,7 @@
                             <constraint firstItem="Kdo-go-shQ" firstAttribute="top" secondItem="roA-Sd-fzB" secondAttribute="bottom" id="4g1-ow-Utp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZQV-xe-vBY" secondAttribute="trailing" constant="20" id="7tc-Zq-mDF"/>
                             <constraint firstItem="Kdo-go-shQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AQc-2h-69X"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YEe-lt-dPm" secondAttribute="trailing" constant="10" id="Aj2-1P-OVZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YEe-lt-dPm" secondAttribute="trailing" constant="50" id="Aj2-1P-OVZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZQV-xe-vBY" secondAttribute="bottom" constant="20" id="BJI-ZX-i0H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="roA-Sd-fzB" secondAttribute="trailing" constant="10" id="C9h-W9-W9A"/>
                             <constraint firstItem="Kfh-C1-vAR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="EX9-C7-Gwr"/>
@@ -240,6 +254,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="trash.fill" catalog="system" width="119" height="128"/>
         <namedColor name="backgroundColor">
             <color red="0.98000001907348633" green="0.98400002717971802" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -251,6 +266,9 @@
         </namedColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

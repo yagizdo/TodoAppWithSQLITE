@@ -22,6 +22,10 @@ class HomeViewPresenter : ViewToPresenterHomeViewProtocol {
     func addCategory(categoryName: String) {
         interactor?.addCategory(categoryName: categoryName)
     }
+    
+    func deleteCategory(categoryID: Int) {
+        interactor?.deleteCategory(categoryID: categoryID)
+    }
 }
 
 extension HomeViewPresenter : InteractorToPresenterHomeViewProtocol {
