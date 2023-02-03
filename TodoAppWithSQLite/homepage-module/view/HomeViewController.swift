@@ -176,6 +176,9 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         cell.todoDescLabel.text = todo.todo_description
         cell.todoCellBackground.layer.cornerRadius = 10
         
+        cell.homeViewPresenterDelegate = homeViewPresenterDelegate
+        cell.todo = todo
+        
         return cell
     }
 }

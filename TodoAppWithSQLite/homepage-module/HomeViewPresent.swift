@@ -26,6 +26,10 @@ class HomeViewPresenter : ViewToPresenterHomeViewProtocol {
     func deleteCategory(categoryID: Int) {
         interactor?.deleteCategory(categoryID: categoryID)
     }
+    
+    func deleteTodo(todoID: Int,categoryID:Int) {
+        interactor?.deleteTodo(todoID: todoID,categoryID: categoryID)
+    }
 }
 
 extension HomeViewPresenter : InteractorToPresenterHomeViewProtocol {

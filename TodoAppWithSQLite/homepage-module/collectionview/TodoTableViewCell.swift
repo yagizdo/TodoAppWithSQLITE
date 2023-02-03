@@ -16,6 +16,9 @@ class TodoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var todoCellBackground: UIView!
     
+    var homeViewPresenterDelegate:ViewToPresenterHomeViewProtocol?
+    var todo:Todo?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,4 +30,7 @@ class TodoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func deleteTodoButton(_ sender: Any) {
+        homeViewPresenterDelegate?.deleteTodo(todoID: todo!.todo_id!, categoryID: todo!.category_id!)
+    }
 }

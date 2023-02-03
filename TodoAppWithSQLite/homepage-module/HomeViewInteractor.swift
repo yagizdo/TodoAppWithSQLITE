@@ -32,6 +32,7 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
         db?.open()
         
         do {
+            categories.removeAll()
             let rs = try db!.executeQuery("SELECT * FROM categories", values: nil)
             
             while rs.next() {
@@ -57,6 +58,7 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
         
         do {
             let rs = try db!.executeQuery("SELECT * FROM todos WHERE category_id = ?", values: [categoryID])
+            //let rs = try db!.executeQuery("SELECT * FROM todos", values: [categoryID])
             
             while rs.next() {
                 let todo_id = Int(rs.string(forColumn: "todo_id"))
@@ -80,7 +82,6 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
         db?.open()
     
         do {
-            categories.removeAll()
             try db!.executeUpdate("INSERT INTO categories (category_name) VALUES (?)", values: [categoryName])
             getCategories()
         } catch {
@@ -94,9 +95,27 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
         db?.open()
         
         do {
-            categories.removeAll()
+            // Remove all todos in this category
+            try db!.executeUpdate("DELETE FROM todos WHERE category_id = ?", values: [categoryID])
+            
+            // Remove Category
             try db!.executeUpdate("DELETE FROM categories WHERE category_id = ?", values: [categoryID])
             getCategories()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
+    }
+    
+    func deleteTodo(todoID: Int,categoryID:Int) {
+        db?.open()
+        
+        do {
+            // Remove all todos in this category
+            try db!.executeUpdate("DELETE FROM todos WHERE todo_id = ?", values: [todoID])
+            
+            getTodos(categoryID: categoryID)
         } catch {
             print(error.localizedDescription)
         }
