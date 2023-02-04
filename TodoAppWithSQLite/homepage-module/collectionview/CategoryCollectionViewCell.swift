@@ -19,7 +19,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     var homeViewPresenterDelegate:ViewToPresenterHomeViewProtocol?
     var categoryID:Int?
+    
     @IBAction func deleteCategoryButton(_ sender: Any) {
         homeViewPresenterDelegate?.deleteCategory(categoryID: categoryID!)
     }
+    
+    
 }

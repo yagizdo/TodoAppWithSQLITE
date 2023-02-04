@@ -18,6 +18,7 @@ protocol ViewToPresenterHomeViewProtocol {
     func deleteCategory(categoryID:Int)
     func deleteTodo(todoID:Int,categoryID:Int)
     func searchTodo(searchText:String)
+    func getTasksCount(categoryID:Int)->Int
 }
 
 protocol PresenterToInteractorHomeViewProtocol {
@@ -30,6 +31,7 @@ protocol PresenterToInteractorHomeViewProtocol {
     func deleteCategory(categoryID:Int)
     func deleteTodo(todoID:Int,categoryID:Int)
     func searchTodo(searchText:String)
+    func getTasksCount(categoryID:Int)->Int
 }
 
 protocol InteractorToPresenterHomeViewProtocol {

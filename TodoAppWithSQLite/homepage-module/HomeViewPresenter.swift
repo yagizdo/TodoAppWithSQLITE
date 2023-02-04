@@ -34,6 +34,10 @@ class HomeViewPresenter : ViewToPresenterHomeViewProtocol {
     func searchTodo(searchText: String) {
         interactor?.searchTodo(searchText: searchText)
     }
+    
+    func getTasksCount(categoryID: Int) -> Int {
+        interactor!.getTasksCount(categoryID: categoryID)
+    }
 }
 
 extension HomeViewPresenter : InteractorToPresenterHomeViewProtocol {

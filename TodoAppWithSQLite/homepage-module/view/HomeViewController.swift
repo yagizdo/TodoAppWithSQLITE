@@ -80,6 +80,8 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("selected Category : \(selectedCategoryIndex)")
         homeViewPresenterDelegate?.getTodos(categoryID: selectedCategoryIndex)
+        categoriesCollectionView.reloadData()
+        
     }
     
     
@@ -166,6 +168,10 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         
         let category = categories[indexPath.row]
         
+        let todosCount:Int = (homeViewPresenterDelegate?.getTasksCount(categoryID: category.category_id!) ?? 0)!
+        
+        cell.taskCountLabel.text = String("\(todosCount) Tasks")
+        
         cell.categoryNameLabel.text = category.category_name
         
         cell.homeViewPresenterDelegate = homeViewPresenterDelegate
@@ -184,6 +190,8 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         homeViewPresenterDelegate?.getTodos(categoryID: category.category_id!)
         self.todosTableView.reloadData()
     }
+    
+    
 }
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {

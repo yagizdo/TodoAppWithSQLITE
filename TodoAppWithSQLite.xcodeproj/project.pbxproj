@@ -28,7 +28,7 @@
 		10C03CC1298D5BA20016F107 /* AddTodoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C03CC0298D5BA20016F107 /* AddTodoRouter.swift */; };
 		10C03CC3298D5BB40016F107 /* AddTodoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C03CC2298D5BB40016F107 /* AddTodoProtocols.swift */; };
 		10C03CC5298D62840016F107 /* ui_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C03CC4298D62840016F107 /* ui_extensions.swift */; };
-		10D2F1DD298BD7F00002E3C0 /* HomeViewPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1DC298BD7F00002E3C0 /* HomeViewPresent.swift */; };
+		10D2F1DD298BD7F00002E3C0 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1DC298BD7F00002E3C0 /* HomeViewPresenter.swift */; };
 		10D2F1DF298BD84A0002E3C0 /* HomeViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1DE298BD84A0002E3C0 /* HomeViewProtocols.swift */; };
 		10D2F1E1298BD8540002E3C0 /* HomeViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1E0298BD8540002E3C0 /* HomeViewInteractor.swift */; };
 		10D2F1E3298BD85C0002E3C0 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1E2298BD85C0002E3C0 /* HomeViewRouter.swift */; };
@@ -67,7 +67,7 @@
 		10C03CC0298D5BA20016F107 /* AddTodoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoRouter.swift; sourceTree = "<group>"; };
 		10C03CC2298D5BB40016F107 /* AddTodoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoProtocols.swift; sourceTree = "<group>"; };
 		10C03CC4298D62840016F107 /* ui_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ui_extensions.swift; sourceTree = "<group>"; };
-		10D2F1DC298BD7F00002E3C0 /* HomeViewPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewPresent.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewPresent.swift"; sourceTree = SOURCE_ROOT; };
+		10D2F1DC298BD7F00002E3C0 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewPresenter.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewPresenter.swift"; sourceTree = SOURCE_ROOT; };
 		10D2F1DE298BD84A0002E3C0 /* HomeViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewProtocols.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewProtocols.swift"; sourceTree = SOURCE_ROOT; };
 		10D2F1E0298BD8540002E3C0 /* HomeViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewInteractor.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewInteractor.swift"; sourceTree = SOURCE_ROOT; };
 		10D2F1E2298BD85C0002E3C0 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewRouter.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewRouter.swift"; sourceTree = SOURCE_ROOT; };
@@ -110,7 +110,7 @@
 		101C2267298ADA1500EAB568 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				10D2F1DC298BD7F00002E3C0 /* HomeViewPresent.swift */,
+				10D2F1DC298BD7F00002E3C0 /* HomeViewPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -346,7 +346,7 @@
 				108236DF298A8037008D0E9D /* AppDelegate.swift in Sources */,
 				10C03CBA298D5B540016F107 /* AddTodoViewController.swift in Sources */,
 				10D2F1DF298BD84A0002E3C0 /* HomeViewProtocols.swift in Sources */,
-				10D2F1DD298BD7F00002E3C0 /* HomeViewPresent.swift in Sources */,
+				10D2F1DD298BD7F00002E3C0 /* HomeViewPresenter.swift in Sources */,
 				101C2271298B056700EAB568 /* TodoTableViewCell.swift in Sources */,
 				10C03CC5298D62840016F107 /* ui_extensions.swift in Sources */,
 				10D2F1E3298BD85C0002E3C0 /* HomeViewRouter.swift in Sources */,
