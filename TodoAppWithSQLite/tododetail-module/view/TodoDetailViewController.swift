@@ -31,7 +31,7 @@ class TodoDetailViewController: UIViewController {
     @IBAction func updateTodoButton(_ sender: Any) {
         if let todoTitle = todoTitleTF.text, let todoDescription = todoTitleDesc.text, let t = todo {
             todoDetailPresentDelegate?.updateTodo(todoID: t.todo_id!, todoTitle: todoTitle, todoDescription: todoDescription)
-            navigationController?.popViewController(animated: true)
+            navigationController?.popViewController(animated: true) 
         }
     }
     
