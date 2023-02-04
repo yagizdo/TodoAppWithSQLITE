@@ -123,4 +123,29 @@ class HomeViewInteractor : PresenterToInteractorHomeViewProtocol {
         
         db?.close()
     }
+    
+    func searchTodo(searchText: String) {
+        db?.open()
+        
+        do {
+            todos.removeAll()
+            let rs = try db!.executeQuery("SELECT * FROM todos WHERE todo_title LIKE ? ", values: ["%\(searchText)%"])
+            
+            while rs.next() {
+                let todo_id = Int(rs.string(forColumn: "todo_id"))
+                let todo_title = rs.string(forColumn: "todo_title")
+                let todo_description = rs.string(forColumn: "todo_description")
+                let category_id = Int(rs.string(forColumn: "category_id"))
+                
+                let todo = Todo(todo_id: todo_id!, todo_title: todo_title!, todo_description: todo_description!, category_id: category_id!)
+                
+                todos.append(todo)
+            }
+            presenter?.sendDataToPresenter(todos: todos)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
+    }
 }

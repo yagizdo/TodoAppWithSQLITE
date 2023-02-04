@@ -30,6 +30,10 @@ class HomeViewPresenter : ViewToPresenterHomeViewProtocol {
     func deleteTodo(todoID: Int,categoryID:Int) {
         interactor?.deleteTodo(todoID: todoID,categoryID: categoryID)
     }
+    
+    func searchTodo(searchText: String) {
+        interactor?.searchTodo(searchText: searchText)
+    }
 }
 
 extension HomeViewPresenter : InteractorToPresenterHomeViewProtocol {

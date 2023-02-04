@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORIES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roA-Sd-fzB">
-                                <rect key="frame" x="25" y="174" width="379" height="17"/>
+                                <rect key="frame" x="25" y="214" width="379" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" name="subtitleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kdo-go-shQ">
-                                <rect key="frame" x="10" y="191" width="385" height="150"/>
+                                <rect key="frame" x="10" y="231" width="385" height="150"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="385" id="OA1-gt-vGl"/>
@@ -111,13 +111,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Denemeeeee Todos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEe-lt-dPm">
-                                <rect key="frame" x="25" y="366" width="339" height="18"/>
+                                <rect key="frame" x="25" y="406" width="339" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" name="subtitleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-C1-vAR">
-                                <rect key="frame" x="10" y="394" width="385" height="474"/>
+                                <rect key="frame" x="10" y="434" width="385" height="474"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="385" id="Lbu-df-teu"/>
@@ -185,7 +185,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zs-ZX-xCo">
-                                <rect key="frame" x="353" y="154" width="41" height="47.5"/>
+                                <rect key="frame" x="353" y="198" width="41" height="47.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="29"/>
@@ -210,6 +210,16 @@
                                     <segue destination="Nju-rL-afu" kind="show" id="TI9-2n-fTr"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="1uj-VU-Ic6">
+                                <rect key="frame" x="0.0" y="144" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JMM-At-h6f"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tkT-ER-KDB"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -219,14 +229,17 @@
                             <constraint firstItem="8zs-ZX-xCo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="353" id="4dS-8J-h4Q"/>
                             <constraint firstItem="Kdo-go-shQ" firstAttribute="top" secondItem="roA-Sd-fzB" secondAttribute="bottom" id="4g1-ow-Utp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZQV-xe-vBY" secondAttribute="trailing" constant="20" id="7tc-Zq-mDF"/>
+                            <constraint firstItem="1uj-VU-Ic6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AEG-NT-DaC"/>
                             <constraint firstItem="Kdo-go-shQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AQc-2h-69X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YEe-lt-dPm" secondAttribute="trailing" constant="50" id="Aj2-1P-OVZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZQV-xe-vBY" secondAttribute="bottom" constant="20" id="BJI-ZX-i0H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="roA-Sd-fzB" secondAttribute="trailing" constant="10" id="C9h-W9-W9A"/>
                             <constraint firstItem="Kfh-C1-vAR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="EX9-C7-Gwr"/>
                             <constraint firstItem="YEe-lt-dPm" firstAttribute="top" secondItem="Kdo-go-shQ" secondAttribute="bottom" constant="25" id="GAb-I8-8vw"/>
-                            <constraint firstItem="8zs-ZX-xCo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Qk8-9y-sBy"/>
-                            <constraint firstItem="roA-Sd-fzB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="VIU-oW-hiB"/>
+                            <constraint firstItem="8zs-ZX-xCo" firstAttribute="top" secondItem="1uj-VU-Ic6" secondAttribute="bottom" constant="10" id="Qk8-9y-sBy"/>
+                            <constraint firstItem="roA-Sd-fzB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="VIU-oW-hiB"/>
+                            <constraint firstItem="1uj-VU-Ic6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VQe-zo-nNq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1uj-VU-Ic6" secondAttribute="trailing" id="Z5P-ho-Wgu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8zs-ZX-xCo" secondAttribute="trailing" constant="20" id="bKM-00-v9W"/>
                             <constraint firstItem="Kfh-C1-vAR" firstAttribute="top" secondItem="YEe-lt-dPm" secondAttribute="bottom" constant="10" id="e5b-tw-kYL"/>
                             <constraint firstItem="Kfh-C1-vAR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="khS-8z-pzz"/>
@@ -235,6 +248,7 @@
                     <navigationItem key="navigationItem" title="What's up, Yago!" id="NrV-zq-HYP"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="Kdo-go-shQ" id="yQE-OR-1YI"/>
+                        <outlet property="todoSearchBar" destination="1uj-VU-Ic6" id="D1W-i2-fOR"/>
                         <outlet property="todosListTitleLabel" destination="YEe-lt-dPm" id="ZNY-Sg-pdH"/>
                         <outlet property="todosTableView" destination="Kfh-C1-vAR" id="EAr-Q8-vIF"/>
                     </connections>

@@ -16,6 +16,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var todosListTitleLabel: UILabel!
     
+    @IBOutlet weak var todoSearchBar: UISearchBar!
+    
+    
     var todos = [Todo]()
     
     var categories = [Category]()
@@ -66,9 +69,16 @@ class HomeViewController: UIViewController {
         } else {
             todosListTitleLabel.text = "\(categories[0].category_name!) Todos"
         }
+        
+        // Searchbar
+        todoSearchBar.barTintColor = UIColor(named: "backgroundColor")!
+        todoSearchBar.searchTextField.backgroundColor = .white
+        todoSearchBar.searchTextField.placeholder = "Search Todo"
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("selected Category : \(selectedCategoryIndex)")
         homeViewPresenterDelegate?.getTodos(categoryID: selectedCategoryIndex)
     }
     
@@ -86,7 +96,10 @@ class HomeViewController: UIViewController {
          action in
             if var categoryName = alert.textFields![0].text {
                 if categoryName.isEmpty {
-                    print("Lutfen isim girin")
+                    let alert = UIAlertController(title: "Please write Category Title", message: "Category Title can not be empty!", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Okay", style: .default)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
                 } else {
                     categoryName = categoryName.replacingOccurrences(of: " ", with: "")
                     categoryName = categoryName.capitalizedSentence
@@ -136,6 +149,12 @@ extension HomeViewController : PresenterToViewHomeViewProtocol {
     }
 }
 
+extension HomeViewController : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        homeViewPresenterDelegate?.searchTodo(searchText: searchText)
+    }
+}
+
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -161,7 +180,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = categories[indexPath.row]
         todosListTitleLabel.text = "\(category.category_name!) Todos"
-        
+        selectedCategoryIndex = categories.first(where: {$0.category_id == category.category_id})?.category_id ?? 0
         homeViewPresenterDelegate?.getTodos(categoryID: category.category_id!)
         self.todosTableView.reloadData()
     }
