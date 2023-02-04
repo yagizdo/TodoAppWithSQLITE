@@ -84,6 +84,15 @@ class HomeViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTodoDetail" {
+            if let todo = sender as? Todo {
+                let vc = segue.destination as! TodoDetailViewController
+                vc.todo = todo
+            }
+        }
+    }
+    
     
     @IBAction func addCategoryBtn(_ sender: Any) {
         let alert = UIAlertController(title: "Add Category", message: "Please Write Category Name", preferredStyle: .alert)
@@ -212,6 +221,11 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         cell.todo = todo
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let todo = todos[indexPath.row]
+        performSegue(withIdentifier: "toTodoDetail", sender: todo)
     }
 }
 

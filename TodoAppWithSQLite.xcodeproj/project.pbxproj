@@ -28,6 +28,11 @@
 		10C03CC1298D5BA20016F107 /* AddTodoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C03CC0298D5BA20016F107 /* AddTodoRouter.swift */; };
 		10C03CC3298D5BB40016F107 /* AddTodoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C03CC2298D5BB40016F107 /* AddTodoProtocols.swift */; };
 		10C03CC5298D62840016F107 /* ui_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C03CC4298D62840016F107 /* ui_extensions.swift */; };
+		10C05E73298EA892004F6197 /* TodoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C05E72298EA892004F6197 /* TodoDetailPresenter.swift */; };
+		10C05E76298EA8AA004F6197 /* TodoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C05E75298EA8AA004F6197 /* TodoDetailInteractor.swift */; };
+		10C05E79298EA8C2004F6197 /* TodoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C05E78298EA8C2004F6197 /* TodoDetailRouter.swift */; };
+		10C05E7C298EA8DA004F6197 /* TodoDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C05E7B298EA8DA004F6197 /* TodoDetailProtocols.swift */; };
+		10C05E7E298EA8EA004F6197 /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C05E7D298EA8EA004F6197 /* TodoDetailViewController.swift */; };
 		10D2F1DD298BD7F00002E3C0 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1DC298BD7F00002E3C0 /* HomeViewPresenter.swift */; };
 		10D2F1DF298BD84A0002E3C0 /* HomeViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1DE298BD84A0002E3C0 /* HomeViewProtocols.swift */; };
 		10D2F1E1298BD8540002E3C0 /* HomeViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2F1E0298BD8540002E3C0 /* HomeViewInteractor.swift */; };
@@ -67,6 +72,11 @@
 		10C03CC0298D5BA20016F107 /* AddTodoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoRouter.swift; sourceTree = "<group>"; };
 		10C03CC2298D5BB40016F107 /* AddTodoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoProtocols.swift; sourceTree = "<group>"; };
 		10C03CC4298D62840016F107 /* ui_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ui_extensions.swift; sourceTree = "<group>"; };
+		10C05E72298EA892004F6197 /* TodoDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailPresenter.swift; sourceTree = "<group>"; };
+		10C05E75298EA8AA004F6197 /* TodoDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailInteractor.swift; sourceTree = "<group>"; };
+		10C05E78298EA8C2004F6197 /* TodoDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailRouter.swift; sourceTree = "<group>"; };
+		10C05E7B298EA8DA004F6197 /* TodoDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailProtocols.swift; sourceTree = "<group>"; };
+		10C05E7D298EA8EA004F6197 /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
 		10D2F1DC298BD7F00002E3C0 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewPresenter.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewPresenter.swift"; sourceTree = SOURCE_ROOT; };
 		10D2F1DE298BD84A0002E3C0 /* HomeViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewProtocols.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewProtocols.swift"; sourceTree = SOURCE_ROOT; };
 		10D2F1E0298BD8540002E3C0 /* HomeViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewInteractor.swift; path = "TodoAppWithSQLite/homepage-module/HomeViewInteractor.swift"; sourceTree = SOURCE_ROOT; };
@@ -167,6 +177,7 @@
 		108236DD298A8037008D0E9D /* TodoAppWithSQLite */ = {
 			isa = PBXGroup;
 			children = (
+				10C05E6F298EA874004F6197 /* tododetail-module */,
 				10C03CB3298D5B1A0016F107 /* addtodo-module */,
 				10C03CB0298D533D0016F107 /* extensions */,
 				10D2F1E5298BE4A90002E3C0 /* entity */,
@@ -255,6 +266,58 @@
 			path = protocols;
 			sourceTree = "<group>";
 		};
+		10C05E6F298EA874004F6197 /* tododetail-module */ = {
+			isa = PBXGroup;
+			children = (
+				10C05E7A298EA8CE004F6197 /* protocols */,
+				10C05E77298EA8B9004F6197 /* router */,
+				10C05E74298EA89C004F6197 /* interactor */,
+				10C05E71298EA886004F6197 /* presenter */,
+				10C05E70298EA880004F6197 /* view */,
+			);
+			path = "tododetail-module";
+			sourceTree = "<group>";
+		};
+		10C05E70298EA880004F6197 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				10C05E7D298EA8EA004F6197 /* TodoDetailViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		10C05E71298EA886004F6197 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				10C05E72298EA892004F6197 /* TodoDetailPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		10C05E74298EA89C004F6197 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				10C05E75298EA8AA004F6197 /* TodoDetailInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		10C05E77298EA8B9004F6197 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				10C05E78298EA8C2004F6197 /* TodoDetailRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		10C05E7A298EA8CE004F6197 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				10C05E7B298EA8DA004F6197 /* TodoDetailProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		10D2F1E5298BE4A90002E3C0 /* entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10C03CC1298D5BA20016F107 /* AddTodoRouter.swift in Sources */,
+				10C05E76298EA8AA004F6197 /* TodoDetailInteractor.swift in Sources */,
 				10C03CBE298D5B7A0016F107 /* AddTodoInteractor.swift in Sources */,
 				108236E3298A8037008D0E9D /* HomeViewController.swift in Sources */,
 				10D2F1E7298BE4B10002E3C0 /* category.swift in Sources */,
@@ -349,17 +413,21 @@
 				10D2F1DD298BD7F00002E3C0 /* HomeViewPresenter.swift in Sources */,
 				101C2271298B056700EAB568 /* TodoTableViewCell.swift in Sources */,
 				10C03CC5298D62840016F107 /* ui_extensions.swift in Sources */,
+				10C05E7E298EA8EA004F6197 /* TodoDetailViewController.swift in Sources */,
 				10D2F1E3298BD85C0002E3C0 /* HomeViewRouter.swift in Sources */,
 				108236E1298A8037008D0E9D /* SceneDelegate.swift in Sources */,
 				10D2F1E1298BD8540002E3C0 /* HomeViewInteractor.swift in Sources */,
 				101C226F298AE26800EAB568 /* CategoryCollectionViewCell.swift in Sources */,
 				10D2F1E9298BE6310002E3C0 /* todo.swift in Sources */,
+				10C05E7C298EA8DA004F6197 /* TodoDetailProtocols.swift in Sources */,
 				10823703298A8A13008D0E9D /* FMDatabasePool.m in Sources */,
 				10823701298A8A13008D0E9D /* FMResultSet.m in Sources */,
 				10823702298A8A13008D0E9D /* FMDatabaseAdditions.m in Sources */,
 				10C03CC3298D5BB40016F107 /* AddTodoProtocols.swift in Sources */,
+				10C05E73298EA892004F6197 /* TodoDetailPresenter.swift in Sources */,
 				10823704298A8A13008D0E9D /* FMDatabase.m in Sources */,
 				10C03CB2298D534A0016F107 /* string_extensions.swift in Sources */,
+				10C05E79298EA8C2004F6197 /* TodoDetailRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

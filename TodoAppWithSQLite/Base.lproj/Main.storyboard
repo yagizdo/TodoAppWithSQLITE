@@ -251,6 +251,7 @@
                         <outlet property="todoSearchBar" destination="1uj-VU-Ic6" id="D1W-i2-fOR"/>
                         <outlet property="todosListTitleLabel" destination="YEe-lt-dPm" id="ZNY-Sg-pdH"/>
                         <outlet property="todosTableView" destination="Kfh-C1-vAR" id="EAr-Q8-vIF"/>
+                        <segue destination="ZKZ-hn-Zkx" kind="show" identifier="toTodoDetail" id="Zjw-Rz-B09"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -332,6 +333,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0th-qp-dH1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1723" y="-27"/>
+        </scene>
+        <!--Todo Detail-->
+        <scene sceneID="kHN-Pt-Tpw">
+            <objects>
+                <viewController id="ZKZ-hn-Zkx" customClass="TodoDetailViewController" customModule="TodoAppWithSQLite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wFK-7j-yA5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Th0-bL-Nl0">
+                                <rect key="frame" x="50" y="244" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-a4-2XP">
+                                <rect key="frame" x="50" y="328" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwZ-AL-MGX">
+                                <rect key="frame" x="50" y="412" width="314" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update Todo">
+                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="updateTodoButton:" destination="ZKZ-hn-Zkx" eventType="touchUpInside" id="3uC-On-LT5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ob4-Mq-Y0r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ob4-Mq-Y0r" firstAttribute="trailing" secondItem="Th0-bL-Nl0" secondAttribute="trailing" constant="50" id="4R9-Dq-BwD"/>
+                            <constraint firstItem="Th0-bL-Nl0" firstAttribute="top" secondItem="ob4-Mq-Y0r" secondAttribute="top" constant="100" id="9J8-la-lz7"/>
+                            <constraint firstItem="Th0-bL-Nl0" firstAttribute="leading" secondItem="ob4-Mq-Y0r" secondAttribute="leading" constant="50" id="TB5-m7-cPK"/>
+                            <constraint firstItem="IwZ-AL-MGX" firstAttribute="top" secondItem="AWl-a4-2XP" secondAttribute="bottom" constant="50" id="Ugy-9A-SEO"/>
+                            <constraint firstItem="ob4-Mq-Y0r" firstAttribute="trailing" secondItem="AWl-a4-2XP" secondAttribute="trailing" constant="50" id="cbb-x6-Mn9"/>
+                            <constraint firstItem="ob4-Mq-Y0r" firstAttribute="trailing" secondItem="IwZ-AL-MGX" secondAttribute="trailing" constant="50" id="lMQ-He-vLl"/>
+                            <constraint firstItem="AWl-a4-2XP" firstAttribute="leading" secondItem="ob4-Mq-Y0r" secondAttribute="leading" constant="50" id="n4T-gV-kLQ"/>
+                            <constraint firstItem="AWl-a4-2XP" firstAttribute="top" secondItem="Th0-bL-Nl0" secondAttribute="bottom" constant="50" id="sV6-T8-JTc"/>
+                            <constraint firstItem="IwZ-AL-MGX" firstAttribute="leading" secondItem="ob4-Mq-Y0r" secondAttribute="leading" constant="50" id="tD9-IG-4D5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Todo Detail" id="ZK0-ez-ea8"/>
+                    <connections>
+                        <outlet property="todoTitleDesc" destination="AWl-a4-2XP" id="Izc-e8-KlJ"/>
+                        <outlet property="todoTitleTF" destination="Th0-bL-Nl0" id="qFH-Vf-g2b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sxo-Pu-JJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1722" y="633"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kqV-ai-MNN">
